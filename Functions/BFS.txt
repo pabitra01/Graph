@@ -1,0 +1,20 @@
+ public ArrayList<Integer> bfsOfGraph(int V, ArrayList<ArrayList<Integer>> adj) {
+        // Code here
+        ArrayList<Integer> bfs=new ArrayList<>();
+        boolean visited[]=new boolean[V];
+        Queue<Integer> queue=new LinkedList<>();
+        
+        queue.add(0);
+        visited[0]=true;
+        while(!queue.isEmpty()){
+            int node=queue.poll();
+            bfs.add(node);
+            for(int i : adj.get(node)){
+                if(!visited[i]){
+                    visited[i]=true;
+                    queue.add(i);
+                }
+            }
+        }
+        return bfs;
+    }

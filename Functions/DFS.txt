@@ -1,0 +1,9 @@
+public void DFS(ArrayList<Integer> res,boolean vis[],ArrayList<ArrayList<Integer>> adj,int v){
+        vis[v]=true;
+        res.add(v);
+        for(int ele : adj.get(v)){
+            if(!vis[ele]){
+                DFS(res,vis,adj,ele);
+            }
+        }
+    }
